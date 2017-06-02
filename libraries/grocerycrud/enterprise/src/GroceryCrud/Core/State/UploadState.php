@@ -104,11 +104,11 @@ class UploadState extends StateAbstract {
         // Validate file upload
         $file->addValidations(array(
             new \Upload\Validation\Extension(
-                ['gif', 'jpeg', 'jpg', 'png', 'tiff', 'doc', 'docx', 'txt', 'odt', 'xls', 'xlsx', 'pdf', 'ppt', 'pptx', 'pps', 'ppsx', 'mp3', 'm4a', 'ogg', 'wav', 'mp4', 'm4v', 'mov', 'wmv', 'flv', 'avi', 'mpg', 'ogv', '3gp', '3g2']
+                ['gif', 'jpeg', 'jpg', 'png']
             ),
 
             // Ensure file is no larger than 5M (use "B", "K", M", or "G")
-            new \Upload\Validation\Size('20M')
+            new \Upload\Validation\Size('2M')
         ));
 
         // Access data about the file that has been uploaded

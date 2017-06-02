@@ -34,21 +34,31 @@
             </div>
             <div class="hpanel">
                 <div class="panel-body">
-                        <form action="<?php echo base_url(); ?>login" id="loginForm" method="post">
+                        <?php echo form_open("login",array("id"=>"loginForm")); ?>
                             <div class="form-group">
                                 <label class="control-label" for="username">Username</label>
-                                <input type="text" placeholder="Masukkan username anda" required="" value="" name="user_name" class="form-control">
+                                <input type="text" placeholder="Masukkan username anda" required value="" name="username" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
-                                <input type="password" placeholder="Masukkan kata sandi anda" required="" value="" name="user_password" class="form-control">
+                                <input type="password" placeholder="Masukkan kata sandi anda" required value="" name="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="sbg">Sebagai</label>
+                                <select class="form-control" name="sebagai" onchange="action_sebagai(event)" required>
+                                    <option value="">-- Sebagai --</option>
+                                    <option value="siswa">Siswa</option>
+                                    <option value="guru">Guru</option>
+                                    <option value="petugas">Petugas</option>
+                                    <option value="admin">Administrator</option>
+                                </select>
                             </div>
                             <div class="checkbox">
                                 <input type="checkbox" class="i-checks" checked>
                                      Remember login
                             </div>
                             <button class="btn btn-success btn-block" name="login" type="submit">Login</button>
-                        </form>
+                        <?php echo form_close(); ?>
                 </div>
             </div>
         </div>
@@ -59,7 +69,6 @@
         </div>
     </div>
 </div>
-
 <script src="<?=base_url(); ?>assets/vendor/jquery/dist/jquery.min.js"></script>
 <script src="<?=base_url(); ?>assets/vendor/jquery-ui/jquery-ui.min.js"></script>
 <script src="<?=base_url(); ?>assets/vendor/slimScroll/jquery.slimscroll.min.js"></script>
@@ -68,6 +77,5 @@
 <script src="<?=base_url(); ?>assets/vendor/iCheck/icheck.min.js"></script>
 <script src="<?=base_url(); ?>assets/vendor/sparkline/index.js"></script>
 <script src="<?=base_url(); ?>assets/scripts/homer.js"></script>
-
 </body>
 </html>
